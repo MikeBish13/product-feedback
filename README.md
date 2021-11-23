@@ -1,6 +1,6 @@
 # Frontend Mentor - Product feedback app
 
-![Design preview for the Product feedback app coding challenge](./preview.jpg)
+![Design preview for the Product feedback app coding challenge](./feedback-preview.jpg)
 
 ## Welcome! 👋
 
