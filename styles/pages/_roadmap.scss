@@ -1,0 +1,218 @@
+.roadmap {
+  .header-roadmap {
+    background: $clr-dark-blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px 6%;
+    position: relative;
+    margin-bottom: 84px;
+    max-width: 1110px;
+    h1 {
+      color: $clr-white;
+    }
+    a {
+      color: $clr-white;
+    }
+    @include mq(tablet){
+        width: 87%;
+        margin: 56px auto 32px;
+        border-radius: 10px;
+        padding: 27px 32px;
+    }
+    @include mq(desktop){
+        margin: 78px auto 48px;
+    }
+  }
+  &__nav {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    border-bottom: 1px solid #8c92b336;
+    @include mq(tablet) {
+      display: none;
+    }
+  }
+
+  .roadmap__tab {
+    cursor: pointer;
+    color: #3a437462;
+    font-size: 13px;
+    font-weight: $fw-bold;
+    background: transparent;
+    border: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 0px;
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+    }
+    &--planned {
+      &::after {
+        background: $clr-orange;
+      }
+    }
+    &--progress {
+      &::after {
+        background: $clr-purple;
+      }
+    }
+    &--live {
+      &::after {
+        background: $clr-light-blue;
+      }
+    }
+    &[aria-selected="true"] {
+      color: $clr-dark-gray;
+      &::after {
+        height: 4px;
+      }
+    }
+  }
+
+  &__container {
+    width: 87%;
+    margin: 0 auto;
+    max-width: 1110px;
+    @include mq(tablet) {
+        display: flex;
+        gap: 4vw;
+    }
+  }
+
+  &__list {
+    display: none;
+    @include mq(tablet) {
+      display: block;
+      width: 100%;
+    }
+    &-header {
+      margin-bottom: 24px;
+      h3 {
+        font-size: 18px;
+        color: $clr-dark-gray;
+        margin-bottom: 4px;
+        @include mq(tablet) {
+          font-size: 20px;
+        }
+      }
+      p {
+        font-size: 13px;
+        color: $clr-gray;
+      }
+    }
+    ul {
+      list-style: none;
+    }
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.roadmap-card {
+  background: $clr-white;
+  padding: 24px 28px 24px 24px;
+  border-radius: 10px;
+  border-top: 6px solid black;
+  @include mq(tablet) {
+    padding: 26px 20px 24px 20px;
+  }
+  @include mq(tablet) {
+    padding: 31px 32px 32px 31px;
+  }
+  & + .roadmap-card {
+    margin-top: 16px;
+  }
+  &__status {
+    font-size: 13px;
+    color: $clr-gray;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 16px;
+    @include mq(desktop) {
+      font-size: 16px;
+    }
+    &::after {
+      content: "";
+      width: 8px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+  &__title {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: $fw-bold;
+    color: $clr-dark-gray;
+    display: inline-block;
+    margin-bottom: 9px;
+    transition: $transition;
+    @include mq(desktop) {
+      font-size: 18px;
+    }
+    &:hover {
+      color: $clr-mid-blue;
+    }
+  }
+  &__description {
+    font-size: 13px;
+    color: $clr-gray;
+    margin-bottom: 8px;
+    @include mq(desktop) {
+      font-size: 16px;
+    }
+  }
+  &__cat-title {
+    margin-bottom: 16px;
+  }
+  &__comment-count {
+    p {
+      color: $clr-dark-gray;
+      font-size: 13px;
+      font-weight: $fw-bold;
+      margin-left: 4px;
+    }
+  }
+  &-planned {
+    border-color: $clr-orange;
+    .roadmap-card__status::after {
+      background: $clr-orange;
+    }
+  }
+  &-in-progress {
+    border-color: $clr-purple;
+    .roadmap-card__status::after {
+      background: $clr-purple;
+    }
+  }
+  &-live {
+    border-color: $clr-light-blue;
+    .roadmap-card__status::after {
+      background: $clr-light-blue;
+    }
+  }
+  div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

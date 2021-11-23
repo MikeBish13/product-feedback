@@ -1,0 +1,38 @@
+.index-container {
+    @include mq(desktop) {
+        width: 87%;
+        max-width: 1110px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    main {
+        @include mq(desktop) {
+            width: 75%;
+        }
+    }
+}
+
+.post-items {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 825px;
+    list-style: none;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 55px;
+
+    .post-item:hover {
+        .post-item__title {
+            color: $clr-mid-blue;
+        }
+    }
+    @include mq(desktop) {
+        width: 100%;
+        margin: 24px 0 129px 0;
+    }
+}

@@ -1,0 +1,9 @@
+.post-control--edit {
+    .post-control__buttons {
+        .btn-four {
+            @include mq(tablet) {
+                margin-right: auto;
+            }
+        }
+    }
+}

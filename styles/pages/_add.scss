@@ -1,0 +1,77 @@
+.post-control {
+  header {
+    width: 87%;
+    margin: 0 auto;
+    max-width: 540px;
+    padding: 34px 0;
+    @include mq(tablet) {
+      padding: 56px 0;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 24px;
+    transform: translateY(-50%);
+    @include mq(tablet) {
+        left: 42px;
+    }
+  }
+
+  &__container {
+    width: 87%;
+    margin: 21px auto 77px;
+    max-width: 540px;
+    background: $clr-white;
+    border-radius: 10px;
+    position: relative;
+    padding: 44px 24px 24px 24px;
+    @include mq(tablet) {
+      margin: 12px auto 223px;
+      padding: 52px 42px 40px;
+    }
+
+    h1,
+    label {
+      color: $clr-dark-gray;
+    }
+
+    h1 {
+      margin-bottom: 24px;
+    }
+
+    label {
+      font-weight: $fw-bold;
+      font-size: 13px;
+      display: inline-block;
+      margin-bottom: 16px;
+      @include mq(tablet) {
+        font-size: 14px;
+      }
+
+      span {
+        color: $clr-gray;
+        font-weight: $fw-reg;
+        margin-top: 3px;
+      }
+    }
+  }
+  &__input {
+    margin-bottom: 24px;
+  }
+  &__buttons {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @include mq(tablet) {
+      margin-top: 32px;
+      flex-direction: row-reverse;
+
+      * {
+        width: max-content;
+      }
+    }
+  }
+}
